@@ -1,13 +1,37 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --index: calc(1vw + 1vh);
+  --gutter: 30px;
+  --side-small: 26;
+  --size-big: 36;
+  --bg: #000;
+  --text: #fff;
+  --depth: 4000px;
+	--transition: .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+@font-face {
+  font-family: raleway_c;
+  src: url('../public/fonts/raleway-v22-cyrillic-300.woff2');
+  font-weight: 300;
+}
+@font-face {
+  font-family: raleway_c;
+  src: url('../public/fonts/raleway-v22-cyrillic-100.woff2');
+  font-weight: 100;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-size: calc(var(--index) * .8);
+  font-family: raleway_c, sans-serif;
+  line-height: 1.75;
+  height: var(--depth);
+	font-weight: 300;
 }

@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+
+.container {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	perspective: 1500px;
+}
+.gallery {
+	transform-style: preserve-3d;
+	height: 100%;
+}
+.frame {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transition), opacity .75s ease;
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+h1, h2, h3, h4 {
+	font-weight: 100;
+	text-transform: uppercase;
+	width: min-content;
+	line-height: 1;
+}
+.frame h2 {
+	text-align: center;
+	font-size: calc(var(--index) * 3.3);
+}
+.frame-media {
+	position: relative;
+	width: calc(var(--index) * var(--side-small));
+	height: calc(var(--index) * var(--side-big));
+	background-position: center;
+	background-size: cover;
+}
+.frame-media_left {
+	right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame-media_right {
+	left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame_bg {
+	background-color: rgb(0 0 0 / .87);
+}
+video.frame-media {
+	width: calc(var(--index) * var(--side-big));
+	height: calc(var(--index) * var(--side-small));
+}
+video.frame-media_right {
+	left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+video.frame-media_left {
+	right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+.text-right > * {
+	position: relative;
+	left: 18vw;
+}
+.text-left > * {
+	position: relative;
+	right: 18vw;
+}
+.frame h3 {
+	font-size: calc(var(--index) * 3);
+}
+.frame p {
+	max-width: 30vw;
+	margin-top: 3vh;
+}
+.soundbutton {
+	position: fixed;
+	bottom: 5vh;
+	right: 5vw;
+	cursor: pointer;
+	width: 24px;
+	transition: .25s ease;
+}
+.soundbutton.paused {
+	opacity: .25;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.frame__img {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.frame__img > div {
+  height: 100%;
 }
